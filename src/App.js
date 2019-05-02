@@ -15,8 +15,8 @@ class App extends Component{
             welcome:{title:'Welcome', desc:'Hello,React!!!'},
             contents:[
                 {id:1, title:'HTML', desc:'HTML is HyperText...'},
-                {id:1, title:'CSS', desc:'CSS is for design'},
-                {id:1, title:'JavaScript', desc:'JavaScript is for interactive'}
+                {id:2, title:'CSS', desc:'CSS is for design'},
+                {id:3, title:'JavaScript', desc:'JavaScript is for interactive'}
             ]
         }
     }
@@ -33,10 +33,17 @@ class App extends Component{
         }
     return(
         <div className="App">
-          <Subject
-              title={this.state.subject.title}
-              sub={this.state.subject.sub}>
-          </Subject>
+          {/*<Subject*/}
+              {/*title={this.state.subject.title}*/}
+              {/*sub={this.state.subject.sub}>*/}
+          {/*</Subject>*/}
+          <header>
+            <h1><a href="/" onClick={function(e){
+                console.log(e);
+                e.preventDefault();
+            }}>{this.state.subject.title}</a></h1>
+            {this.state.subject.sub}
+          </header>
           <TOC data={this.state.contents}></TOC>
           <Content title={_title} desc={_desc}></Content>
         </div>
